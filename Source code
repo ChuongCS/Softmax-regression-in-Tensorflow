@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 
 
-fileName = 'hw.csv'
+fileName = 'Student_grades.csv'
 
 try_epochs = 1
 batch_size = 8
