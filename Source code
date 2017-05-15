@@ -18,7 +18,7 @@ def read_from_csv(filename_queue):
     reader = tf.TextLineReader(skip_header_lines=True) # skipt the header line
     _, csv_row = reader.read(filename_queue) # read one line
     data = tf.decode_csv(csv_row, record_defaults=rDefaults) # use defaults for this line (in case of missing data)
-    features = tf.string_to_number(tf.slice(data, [0], [F]), tf.float32) # cells 2-480 is the list of features
+    features = tf.string_to_number(tf.slice(data, [0], [F]), tf.float32) # cells 1-2 is the list of features
     label = tf.string_to_number(tf.slice(data, [F], [L]), tf.float32) # the remainin 3 cells is the list for one-hot label
     return features, label
 
